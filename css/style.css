@@ -1,0 +1,381 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* COLORS */
+/*
+background (almost white) 	: #DAD9D9
+point (almost black)		: #414141
+point Red					: #DD1843
+point Green 				: #7BCD3D
+point Blue 					: #1FC8D8
+mid color (grayish)			: #A0A0A0
+*/
+
+/* Basic Background colors */
+
+html, body {
+	height: 100%;
+	background-color: #DAD9D9;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	
+#forBorder {
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	}
+		
+#container_border {
+	width: 1000px;
+	background-color: #414141;
+	margin: 0px auto;
+	height: 100%;
+	position: r;
+	left: 0;
+	bot: 0;
+	}	
+	
+#container {
+	width: 960px;
+	background-color: #DAD9D9;
+	margin: 0px auto;
+	height: 100%;
+	}
+	
+/* Header and Navigations */
+
+#main_header {
+	width: 960px;
+	position: relative;
+	}
+
+#ul_con {
+	margin: 20px 0px 0px;
+	}
+
+header a, header a:visited {
+	color: #414141;
+	text-decoration: none;
+	font-size: 24px;
+	float: right;
+	margin: 0px 20px 1px 0px;
+	padding-left: 22px;
+	background-image: url(../images/checkbox_unchecked.png);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	}	
+	
+header a:hover {
+	color: #DD1843;
+	background-image: url(../images/checkbox_checked.png);
+	}
+header a:active {
+	color: #7BCD3D;
+	background-image: url(../images/checkbox_checked.png);
+	}	
+	
+#nav_spin {
+	position: absolute;
+	top: 65px;
+	left: 65px;
+	}
+
+#nav_spin img{
+	animation: rotate 3s;
+	-moz-animation: rotate 3s;
+	-webkit-animation: rotate 3s;
+	
+	/*forever spining */
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	
+	}
+
+
+/* BASIC LAYOUT DESIGNS */
+
+section span {
+	color: #DAD9D9;
+	font-size: 24px;
+	line-height: 40px;
+	padding-left: 12px;
+	}
+	
+.cap {
+	font-size: 36px;
+	padding-left: 7px;
+	}
+
+/* A: music scroller */
+
+section {
+	width: 920px;
+	margin: 0 auto;
+	margin: 50px auto;
+	}
+
+#article_a {
+	width: 920px;
+	float: right;
+	}
+
+#aheader_a {
+	width: 40px;
+	height: 40px;
+	background-color: #414141;
+	margin: 0 5px 0 0;
+	float: left;
+	}
+	
+#aheaderbar_a {
+	height: 40px;
+	width: 875px;
+	background-color: #414141;
+	float: left;
+	}		
+
+/* contents for article A */
+#content_a {
+	height: 280px;
+	margin: 45px 0 0;
+	border-bottom: 5px solid #414141;
+	overflow: hidden;
+	position: relative;
+	}
+	
+ /* background for selected cassette*/	
+#selected_tape {
+	position: absolute;
+	left: 295px;
+	width: 328px;
+	height: 280px;
+	background-image: url(../images/selected.png);
+	background-repeat: no-repeat;
+	}
+	
+/* Tape Slider */
+/*making raido invisible first - i dont want */	
+
+/* radio button styling tutorial for making it invisible ~ http://viralpatel.net/blogs/css-radio-button-checkbox-background/ */
+
+/* make the radio buttons invisible */
+input[type=radio] {
+    display:none; 
+	}
+
+/* it holds all the tapes + label */	
+#bg_holder {
+	height: 280px;
+	/*background-color: pink;*/
+	width: 1800px;
+	margin: 35px 20px 0;
+	x-index: -1;
+	/* transition animation */
+	-webkit-transform: translateZ(0) cubic-bezier(0.770,0.000,0.175,1.000);
+	-webkit-transition: all 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+	-moz-transition: all 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+	transition: all 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+	}	
+
+/* labels are same size with the tapes, but tapes are invisible, and on top of the tapes.
+so it looks like you are clicking tapes but you are clicking the labels. */	
+label {
+	float: left;
+	width: 313px;
+	height: 196px;
+	z-index: 1;
+/*	background-color: rgba(5,5,5,0.2);*/
+	position: relative;
+	margin: 0 20px;
+	}
+	
+#cassette_holder {
+	width: 1800px;
+	}
+	
+.tapes {
+   	float: left;
+	width: 313px;
+	height: 196px;
+	margin: -190px 20px 0;
+	position: relative;
+	}
+
+/* moues curser change to pinter while hovoring over */
+label:hover { cursor: pointer; }
+
+/* when each tape is clicked, it goes to the center of the page */
+#slide1:checked ~ #bg_holder { margin-left: 284px; }
+#slide2:checked ~ #bg_holder { margin-left: -68px; }
+#slide3:checked ~ #bg_holder { margin-left: -422px; }
+#slide4:checked ~ #bg_holder { margin-left: -777px;	}
+#slide5:checked ~ #bg_holder { margin-left: -1128px; }
+
+/*labels of tapes*/
+.tapes span { 
+	color: #414141;
+	font-family: 'rabioheadregular';
+	font-size: 32px;
+	position: absolute;
+	top: 20px;
+	left: 50px;
+	}	
+	
+#tape1 { background-image: url(../images/tape1.png); background-repeat: no-repeat; }
+#tape2 { background-image: url(../images/tape2.png); background-repeat: no-repeat; }
+#tape3 { background-image: url(../images/tape3.png); background-repeat: no-repeat; }
+#tape4 { background-image: url(../images/tape4.png); background-repeat: no-repeat; }
+#tape5 { background-image: url(../images/tape5.png); background-repeat: no-repeat; }
+	
+/* B: Selected music */
+
+#article_b {
+	width: 345px;
+	height: 40px+167px;
+	margin: 30px auto 0;
+	float: left;
+	}
+
+#aheader_b {
+	width: 40px;
+	height: 40px;
+	background-color: #414141;
+	margin: 0 5px 0 0;
+	float: left;
+	color: #DAD9D9;
+	}
+	
+#aheaderbar_b {
+	height: 40px;
+	width: 270px;
+	background-color: #414141;
+	float: left;
+	}
+	
+#content_b {
+	height: 257px;
+	width: 315px;
+	margin: 45px 0 0 0 ;
+	background-image:url(../images/bg_lines.png);
+	background-repeat: no-repeat;
+	}
+	
+#spanholder { padding: 47px 20px 20px; text-align: center; }
+
+#spanholder span{
+	font-family: 'rabioheadregular',"Comic Sans MS", cursive;
+	color: red;
+	font-size: 48px;
+	}
+
+/* C: Music Player */
+
+#article_c {
+	width: 575px;
+	margin: 30px auto 0;
+	float: left;
+	}	
+	
+#aheader_c {
+	width: 40px;
+	height: 40px;
+	background-color: #414141;
+	margin: 0 5px 0 0;
+	float: left;
+	color: #DAD9D9;
+	}
+	
+#aheaderbar_c {
+	height: 40px;
+	width: 530px;
+	background-color: #414141;
+	float: left;
+	}	
+
+#content_c {
+	margin: 45px 0 0;
+	height: 335px;
+	background-image: url(../images/player.png);
+	background-repeat: no-repeat;
+	position: relative;
+	}
+	
+/* buttons for the players */	
+.player_buttons:hover { cursor: pointer;  }
+.player_buttons:active { cursor: pointer; }
+
+#eject, #stop, #play, #pause { position: absolute; width: 68px; height: 96px; }
+#volume { position: absolute; width: 136px; height: 96px; }	
+#a, #b { position: absolute; width: 61px; height: 66px; }
+
+#eject { background-image: url(../images/eject.png); left: 75px; background-repeat: no-repeat; }	
+#play { background-image: url(../images/play.png); left: 150px; background-repeat: no-repeat; }
+#stop { background-image: url(../images/stop.png); left: 220px; background-repeat: no-repeat; }	
+#pause { background-image: url(../images/pause.png); left: 290px; background-repeat: no-repeat; }	
+#volume { background-image: url(../images/sound.png); left: 360px; background-repeat: no-repeat; }
+#a { background-image: url(../images/30sec.png); left: 227px; top: 257px; background-repeat: no-repeat;}
+#b { background-image: url(../images/60sec.png); left: 290px; top: 257px; background-repeat: no-repeat;}
+
+/*hovered over*/
+#eject:hover { background-image: url(../images/eject_hover.png); }	
+#play:hover { background-image: url(../images/play_hover.png); }
+#stop:hover { background-image: url(../images/stop_hover.png); }	
+#pause:hover { background-image: url(../images/pause_hover.png); }
+#volume:hover { background-image: url(../images/sound_hover.png); }
+#a:hover {  background-image: url(../images/30sec_hover.png); }
+#b:hover {  background-image: url(../images/60sec_hover.png); }
+	
+/*mouse - pressed*/
+#eject:active { background-image: url(../images/eject_active.png); }	
+#play:active { background-image: url(../images/play_active.png);  }
+#stop:active { background-image: url(../images/stop_active.png);  }	
+#pause:active { background-image: url(../images/pause_active.png); }	
+#volume:active { background-image: url(../images/sound_active.png); }
+#a:active {  background-image: url(../images/30sec_active.png); }
+#b:active {  background-image: url(../images/60sec_active.png); }
+
+/* speaker gets excited when music is on */
+#speakers {
+	width: 560px;
+	height: 335px;
+	position: absolute;
+	left:-5px;
+	background-image: url(../images/speakers.png);
+	background-repeat: no-repeat;
+	}
+
+/* D: Footer */
+
+footer { margin: 60px auto -5px; }
+	
+#footer_stuff {
+	border-top: 3px double #414141;
+	height: 40px;
+	line-height: 40px;
+	text-align:center;
+	}
+
+/*clearfix*/
+
+.clearfix { overflow: auto; }
+
+/* ANIMATIONS */
+
+/*rotation animation for the nav tape image*/
+
+@-moz-keyframes rotate{
+
+	0% {-moz-transform:rotate(0deg);}
+	100% {-moz-transform:rotate(360deg);}
+}
+
+@-webkit-keyframes rotate{
+	0% {-webkit-transform:rotate(0deg);}
+	100% {-webkit-transform:rotate(360deg);}
+	}
+	
+@keyframes rotate{
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
+	}
