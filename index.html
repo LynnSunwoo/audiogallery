@@ -1,0 +1,195 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    
+    <!-- linking CSS + JavaScript -->
+    <link rel="shortcut icon" type="image/icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="scripts/script.js"></script>
+    
+    <title>Cassette Player</title>
+    
+</head>
+
+<body>
+	
+  <!-- Borders --> 
+  <div id="forBorder">
+  <div id="container_border">
+  
+  <!-- main warpper of the content -->
+  <div id="container">
+    
+    <!-- top header with navigations and border -->
+  	<header id="main_header">
+        
+            <div id="border_top">
+        		<img src="images/footer_border-top.png" alt="border">
+        	</div> 
+                    
+            <div id="ul_con">
+                <ul>	
+                    <li><a href="#" id="popular">POPULAR</a></li>
+                    <li><a href="#" id="explore">EXPLORE</a></li>
+                    <li><a href="#" id="music">MUSIC</a></li>
+                    <li><a href="#" id="home">HOME</a></li>
+                            
+                </ul>
+            </div>
+        
+		<!-- border with spinning thing -->    
+        <div id="nav_bar">
+          <img src="images/nav_bar.png" alt="nav_border">
+        </div>
+        <div id="nav_spin">
+            <img src="images/nav_spin.png" alt="circle">
+        </div>
+        
+
+                    
+    </header>
+    
+    <!-- Main contents -->
+    <section id="content" class="clearfix">
+    	
+        <!-- A: Selecting music -->
+        <article id="article_a" >
+        	
+            <!-- article header -->
+            <header class="artcle_header">
+            	<div id="aheader_a"><span class="cap">A</span></div>
+                <div id="aheaderbar_a"><span>Select a Music</span></div>     
+            </header>
+            
+            <!-- tape container with radio buttons -->
+            <div id="content_a">
+                 <!-- image background to show what is selected -->
+                 <div id="selected_tape"></div>
+                 
+                 <!-- radio buttons (invisible)-->         
+                <div id="radio_holder">
+                
+                <input type="radio" name="slider" id="slide1" checked="checked" >
+            	
+                <input type="radio" name="slider" id="slide2">
+                
+           		<input type="radio" name="slider" id="slide3">
+                
+            	<input type="radio" name="slider" id="slide4">
+                
+            	<input type="radio" name="slider" id="slide5">
+                
+				<!-- labels and tape holder -->
+                <!-- labels will be same size of the tape, but on top on the tape, and it is invisible. So it looks like it is clicking the tape but actually chicking the labels to the radio buttons -->
+				
+                <div id="bg_holder">
+                
+                	<label for="slide1" id="Cry_Me_A_River_" onClick="reply_click(this.id)"></label>
+                    <label for="slide2" id="Free_As_A_Bird_" onClick="reply_click(this.id)"></label>
+                    <label for="slide3" id="Funky_Peppers_" onClick="reply_click(this.id)"></label>
+                    <label for="slide4" id="Honky_Shuffle_" onClick="reply_click(this.id)"></label>
+                    <label for="slide5" id="Shake_It_" onClick="reply_click(this.id)"></label>
+                    
+                    <!-- tapes holder -->
+                    <div id="cassette_holder"> 
+                    
+        			<div class="tapes" id="tape1">
+                        <span>Cry me a River</span>
+                        <audio id="Cry_Me_A_River_a" src="sounds/Cry_Me_A_River_.mp3" src="sounds/Cry_Me_A_River_30.ogg" type="audio/mpeg" type="audio/ogg"></audio>
+                        <audio id="Cry_Me_A_River_b" src="sounds/Cry_Me_A_River_b.mp3" src="sounds/Cry_Me_A_River_60.ogg" type="audio/mpeg" type="audio/ogg"></audio>                          
+                    </div>
+                    
+                    <div class="tapes" id="tape2">
+                        <span>Free as a Bird</span>
+                        <audio id="Free_As_A_Bird_a" src="sounds/Free_As_A_Bird_.mp3" src="sounds/Free_As_A_Bird_30.ogg" type="audio/mpeg" type="audio/ogg"></audio>
+                        <audio id="Free_As_A_Bird_b" src="sounds/Free_As_A_Bird_b.mp3" src="sounds/Free_As_A_Bird_60.ogg" type="audio/mpeg" type="audio/ogg"></audio>                    	  
+                    </div>   
+                     
+                    <div class="tapes" id="tape3">
+                        <span>Funky Peppers</span>
+                        <audio id="Funky_Peppers_a" src="sounds/Funky_Peppers_.mp3" src="sounds/Funky_Peppers_30.ogg" type="audio/mpeg" type="audio/ogg"></audio>
+                        <audio id="Funky_Peppers_b" src="sounds/Funky_Peppers_b.mp3" src="sounds/Funky_Peppers_60.ogg" type="audio/mpeg" type="audio/ogg"></audio>                  	      
+                   </div> 
+                   
+                   <div class="tapes" id="tape4">
+                        <span>Honky Shuffle</span>
+                        <audio id="Honky_Shuffle_a" src="sounds/Honky_Shuffle_.mp3" src="sounds/Honky_Shuffle_30.ogg" type="audio/mpeg" type="audio/ogg"></audio>
+                        <audio id="Honky_Shuffle_b" src="sounds/Honky_Shuffle_b.mp3" src="sounds/Honky_Shuffle_60.ogg" type="audio/mpeg" type="audio/ogg"></audio>                	        
+                   </div> 
+                  
+                   <div class="tapes" id="tape5">
+                        <span>Shake It</span>
+                        <audio id="Shake_It_a" src="sounds/Shake_It_.mp3" src="sounds/Shake_It_30.ogg" type="audio/mpeg" type="audio/ogg"></audio>
+                        <audio id="Shake_It_b" src="sounds/Shake_It_b.mp3" src="sounds/Shake_It_60.ogg" type="audio/mpeg" type="audio/ogg"></audio>              	        	 
+                   </div>
+                   
+                   </div> <!-- End of cassette_holder -->
+                  </div> <!-- End of bg_holder -->         
+                </div> <!-- radio_holder -->               
+            </div> <!-- content_a -->
+            
+        </article>
+        
+        <article id="article_b" >
+        	
+            <header class="artcle_header">
+         		<div id="aheader_b"><span class="cap">B</span></div>
+                <div id="aheaderbar_b"><span>The Selected Music</span></div> 
+            </header>
+            
+            <div id="content_b">
+           		<div id="spanholder"><span>Choose Cassette<br>to play Music</span></div>
+            </div>
+            
+        </article>
+        
+        <article id="article_c">
+        	
+            <header class="artcle_header">
+          		<div id="aheader_c"><span class="cap">C</span></div>
+                <div id="aheaderbar_c"><span>The Player</span></div> 
+            </header>
+            
+            <div id="content_c">    
+            	
+                <div id="speakers"></div>
+            	<div id="eject" class="player_buttons"></div>  
+                <div id="play" class="player_buttons"></div>
+                <div id="stop" class="player_buttons"></div>
+                <div id="pause" class="player_buttons"></div>
+                <div id="volume" class="player_buttons"></div>
+                	<div id="fortheside">
+                <div id="a" class="player_buttons" onClick="reply_side(this.id)"></div>
+                <div id="b" class="player_buttons" onClick="reply_side(this.id)"></div>
+                	</div>
+                
+
+            </div>
+            
+        </article>
+    
+    </section>
+  
+  	<footer>  	
+       
+        <div id="footer_stuff">
+        	<p>&copy; Lynn Sunwoo</p>
+        </div>
+        <div id="border_bot">
+        	<img src="images/footer_border_bot.png" alt="end_border">
+        </div>
+    
+    </footer>
+    
+  </div> <!-- End of container -->
+  </div> <!-- End of container_border -->
+  </div>
+
+</body>
+</html>
